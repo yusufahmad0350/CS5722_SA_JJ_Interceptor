@@ -8,7 +8,7 @@ weather_data_system = Application()
 interceptors_dispatcher = WeatherDataInterceptorsDispatcher()
 
 #Entered weather data from sensor
-weather_data = {"temperature": 4.0, "humidity": 60.0, "pressure": 1027.0}
+weather_data = {"temperature": 4.7, "humidity": 60.4, "pressure": 1027.5}
 weather_data_system.weather_data = weather_data
 
 #Register Interceptors with Dispatcher
