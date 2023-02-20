@@ -1,5 +1,5 @@
 class Application:
-    #Model the Application's weather data with three states: Initialize, Read weather data, and storing the weather data
+    #Model the Application's weather data station with three states: Initialize, Read weather data, and storing the weather data
     def __init__(self):
         self.state = "Initializing"
         self.weather_data = None
