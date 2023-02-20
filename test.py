@@ -1,4 +1,3 @@
-
 from application import Application
 from concrete_interceptors import LoggingInterceptor, WarningInterceptor
 from dispatcher import WeatherDataInterceptorsDispatcher
