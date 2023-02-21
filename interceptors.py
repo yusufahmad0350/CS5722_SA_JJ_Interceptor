@@ -1,5 +1,4 @@
-#Identified two interception points.
-from abc import ABC, abstractmethod
+#Identified two interception points. May considered as PreMarrshallRequest() and PostMarshallRequest()
 from abc import ABC, abstractmethod
 class WeatherDataReaderInterceptor(ABC):
 #Before data read : Reader Set

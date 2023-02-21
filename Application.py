@@ -8,7 +8,7 @@ class Application:
         self.state = "Reading data from the weather data system"
         #print(self.state)
         # simulate reading data from sensors
-        #self.weather_data = {"temperature": 75.0, "humidity": 70.0, "pressure": 1013.0}
+        #self.weather_data = {"temperature": 50.0, "humidity": 90.0, "pressure": 980.0}
 
     def store_data(self):
         self.state = "Storing the data"

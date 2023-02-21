@@ -1,7 +1,8 @@
 from application import Application
 from concrete_interceptors import LoggingInterceptor, WarningInterceptor
-from dispatcher import WeatherDataInterceptorsDispatcher
 from context import WeatherDataContext
+from dispatcher import WeatherDataInterceptorsDispatcher
+from interceptor_factory import InterceptorFactory
 
 
 weather_data_system = Application()
@@ -12,8 +13,8 @@ weather_data = {"temperature": 4.7, "humidity": 60.4, "pressure": 1027.5}
 weather_data_system.weather_data = weather_data
 
 #Register Interceptors with Dispatcher
-logging_interceptor = LoggingInterceptor()
-warning_interceptor = WarningInterceptor()
+logging_interceptor = InterceptorFactory.create_interceptor("logging")
+warning_interceptor = InterceptorFactory.create_interceptor("warning")
 interceptors_dispatcher.register_reader_interceptor(logging_interceptor)
 interceptors_dispatcher.register_writer_interceptor(warning_interceptor)
 

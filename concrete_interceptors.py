@@ -1,5 +1,5 @@
 from interceptors import WeatherDataReaderInterceptor, WeatherDataWriterInterceptor
-
+from abc import ABC, abstractmethod
 
 #Logs the data when data is read and stored
 class LoggingInterceptor(WeatherDataReaderInterceptor, WeatherDataWriterInterceptor):
@@ -21,3 +21,4 @@ class WarningInterceptor(WeatherDataWriterInterceptor):
             print("WARNING: High Humidity detected!")
         if weather_data["pressure"] >= 1025:
             print("WARNING: High pressure detected!")
+            
