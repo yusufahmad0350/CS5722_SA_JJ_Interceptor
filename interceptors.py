@@ -1,15 +1,13 @@
 #Identified two interception points.
 from abc import ABC, abstractmethod
-
 from abc import ABC, abstractmethod
-
 class WeatherDataReaderInterceptor(ABC):
-    #Before data read : Reader Set
+#Before data read : Reader Set
     @abstractmethod
-    def on_before_read(self, context):
+    def read_update(self, context):
         pass
-    #After data Store : Writer Set
+#After data Store : Writer Set
 class WeatherDataWriterInterceptor(ABC):
     @abstractmethod
-    def on_after_write(self, context):
+    def write_update(self, context):
         pass

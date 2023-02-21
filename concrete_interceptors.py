@@ -3,14 +3,14 @@ from interceptors import WeatherDataReaderInterceptor, WeatherDataWriterIntercep
 
 #Logs the data when data is read and stored
 class LoggingInterceptor(WeatherDataReaderInterceptor, WeatherDataWriterInterceptor):
-    def on_before_read(self, context):
+    def read_update(self, context):
         print("Reading weather data...")
 
-    def on_after_write(self, context):
+    def write_update(self, context):
         print("Weather data stored.")
 #Check the data and warn accordingly before storing.
 class WarningInterceptor(WeatherDataWriterInterceptor):
-    def on_after_write(self, context):
+    def write_update(self, context):
         weather_data_system = context.weather_data_system
         weather_data = weather_data_system.weather_data
         if weather_data["temperature"] >= 30.0:
