@@ -1,3 +1,3 @@
 class WeatherDataContext:
-    def __init__(self, weather_data_system):
-        self.weather_data_system = weather_data_system
+    def __init__(self, weather_station):
+        self.weather_station = weather_station

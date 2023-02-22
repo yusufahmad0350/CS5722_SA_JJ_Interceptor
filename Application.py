@@ -1,17 +1,18 @@
-class Application:
+class WeatherStation:
     #Model the Application's weather data station with three states: Initialize, Read weather data, and storing the weather data
     def __init__(self):
-        self.state = "Initializing"
-        self.weather_data = {"temperature": 0.0, "humidity": 0.0, "pressure": 0.0}
-    
-    def read_data(self):
-        self.state = "Reading data from the weather data system"
-        #print(self.state)
-        # simulate reading data from sensors
-        #self.weather_data = {"temperature": 50.0, "humidity": 90.0, "pressure": 980.0}
+        self.temperature = 0.0
+        self.humidity = 0.0
+        self.pressure = 0.0  
+         
+    def get_weather_data(self):
+        return {
+            "temperature": self.temperature,
+            "humidity": self.humidity,
+            "pressure": self.pressure
+        }
 
-    def store_data(self):
-        self.state = "Storing the data"
-        #print(self.state)
-        # simulate storing data in a database
-        print("Storing weather data:", self.weather_data)
+    def set_weather_data(self, temperature, humidity, pressure):
+        self.temperature = temperature
+        self.humidity = humidity
+        self.pressure = pressure
