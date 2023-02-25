@@ -15,11 +15,9 @@ class LoggingInterceptor(WeatherDataReaderInterceptor, WeatherDataWriterIntercep
         weather_station= context.get_weather_station()
         weather_data = weather_station.get_weather_data()
         logging.basicConfig(filename='weatherWrite.log', level=logging.DEBUG)
+        logging.info("Weather Data - Temperature: %s, Humidity: %s, Pressure: %s",
+             weather_data["temperature"], weather_data["humidity"], weather_data["pressure"])
         logging.info("Weather data stored.")
-        logging.info(weather_data["temperature"])
-        
-    
-        
     
 #Check the data and warn accordingly before storing.
 class WarningInterceptor(WeatherDataWriterInterceptor):
