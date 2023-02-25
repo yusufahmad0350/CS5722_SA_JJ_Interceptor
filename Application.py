@@ -1,5 +1,5 @@
 class WeatherStation:
-    #Model the Application's weather data station with three states: Initialize, Read weather data, and storing the weather data
+    #Model the  weather data station with three states: Initialize, Read weather data, and set the weather data
     def __init__(self):
         self.temperature = 0.0
         self.humidity = 0.0
