@@ -20,13 +20,13 @@ def test_interceptor_dispatcher():
     return interceptors_dispatcher
 
 def test_weather_station_set_data(weather_station):
-    weather_station.set_weather_data(temperature=4.7, humidity=90.4, pressure=1068.5)
-    assert weather_station.get_weather_data()["temperature"] == 4.7
+    weather_station.set_weather_data(temperature=140.7, humidity=90.4, pressure=1068.5)
+    assert weather_station.get_weather_data()["temperature"] == 140.7
     assert weather_station.get_weather_data()["humidity"] == 90.4
     assert weather_station.get_weather_data()["pressure"] == 1068.5
 
 def test_logging_interceptor(weather_station, test_interceptor_dispatcher):
-    weather_station.set_weather_data(temperature=4.7, humidity=90.4, pressure=1068.5)
+    weather_station.set_weather_data(temperature=140.7, humidity=90.4, pressure=1068.5)
     context_obj= WeatherDataContext(weather_station)
     test_interceptor_dispatcher.dispatch_before_read()
     test_interceptor_dispatcher.dispatch_after_write(context_obj)
