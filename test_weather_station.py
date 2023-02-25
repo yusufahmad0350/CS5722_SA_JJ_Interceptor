@@ -1,5 +1,5 @@
 import pytest
-from application import WeatherStation
+from weatherStation import WeatherStation
 from concrete_interceptors import LoggingInterceptor, WarningInterceptor
 from context import WeatherDataContext
 from dispatcher import WeatherDataInterceptorsDispatcher
