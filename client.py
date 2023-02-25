@@ -12,8 +12,9 @@ logging_interceptor = InterceptorFactory.create_interceptor("logging")
 warning_interceptor = InterceptorFactory.create_interceptor("warning")
 interceptors_dispatcher.register_reader_interceptor(logging_interceptor)
 interceptors_dispatcher.register_writer_interceptor(warning_interceptor)
-
+interceptors_dispatcher.register_writer_interceptor(logging_interceptor)
 #Dispatcher to dispatch Interception points
-interceptors_dispatcher.dispatch_before_read()
-weather_station.set_weather_data(temperature=4.7, humidity=60.4, pressure=1027.5)
-interceptors_dispatcher.dispatch_after_write(WeatherDataContext(weather_station))
+
+weather_station.set_weather_data(temperature=4.7, humidity=90.4, pressure=1068.5)
+context_obj= WeatherDataContext(weather_station)
+interceptors_dispatcher.dispatch_after_write(context_obj)
